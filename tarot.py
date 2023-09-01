@@ -71,8 +71,11 @@ else:
 
 print('Retrieving card description...\n')
 uri = "http://www.learntarot.com/" + card + ".htm"
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+}
 try:
-    r = requests.get(uri)
+    r = requests.get(uri, headers=headers)
 except:
     print('No internet connection, exiting...')
     exit()
